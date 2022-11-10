@@ -38,8 +38,10 @@ class LoginPage extends StatelessWidget {
                   color: Color(0xffFA4A0C), fontWeight: FontWeight.bold),
             ),
           ),
-          const ButtonLogin(
+          ButtonLogin(
             isLogin: true,
+            controllerEmail: controllerEmail,
+            controllerPassword: controllerPassword,
           )
         ],
       ),

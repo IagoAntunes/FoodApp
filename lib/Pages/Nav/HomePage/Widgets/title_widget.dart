@@ -15,6 +15,7 @@ class TitleWidget extends StatelessWidget {
         style: GoogleFonts.actor(
           fontSize: 35,
           fontWeight: FontWeight.bold,
+          color: Colors.black,
         ),
       ),
     );

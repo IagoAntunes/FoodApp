@@ -33,7 +33,12 @@ class SignupPage extends StatelessWidget {
             labelText: 'Password',
             controller: controllerPassword,
           ),
-          const ButtonLogin(isLogin: false)
+          ButtonLogin(
+            isLogin: false,
+            controllerEmail: controllerEmail,
+            controllerPassword: controllerPassword,
+            controllerName: controllerName,
+          )
         ],
       ),
     );

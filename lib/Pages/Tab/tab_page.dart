@@ -27,7 +27,7 @@ class TabPage extends StatelessWidget {
             indicator: UnderlineTabIndicator(
               borderSide: BorderSide(
                 width: 4.0,
-                color: indicatorTabColor,
+                color: secondaryOrange,
               ),
             ),
             unselectedLabelColor: Colors.black54,

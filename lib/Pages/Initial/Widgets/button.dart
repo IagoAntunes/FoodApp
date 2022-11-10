@@ -8,9 +8,10 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Center(
       child: SizedBox(
-        height: 70,
+        height: size.height * 0.080,
         width: 250,
         child: ElevatedButton(
           onPressed: (() {
