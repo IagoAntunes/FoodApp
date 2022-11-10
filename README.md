@@ -1,11 +1,11 @@
 
 <p align="center">
-    <img src="https://github.com/IagoAntunes/weather/blob/master/assets/Cover.png" alt="Logo" width="500">
+    <img src="https://github.com/IagoAntunes/FoodApp/blob/master/assets/presentation.png" alt="Logo" width="900">
 </p>
 
-<h4 align="center"> 
-	App Food
-</h4>
+<h3 align="center"> 
+App Food
+</h3>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
@@ -19,31 +19,20 @@
 
 ## 💻 Sobre o projeto
 
-:sun_behind_large_cloud: weather  - Aplicativo de previsão do tempo com design intuitivo desenvolvido com Flutter.
+:sandwich: Foodie  - Aplicativo de Comida
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- [x] Previsão do tempo de sua localização
-- [x] Previsão hora em hora
-- [x] Previsão da semana
-- [x] Adicionar outros locais
-- [x] Remover local
-- [x] Visualização detalhada
-- [x] Cores de fundo de acordo com previsao 
+..EM BREVE
 
 ---
 
 ## 🎨 Layout
 
 O layout da aplicação está disponível no Figma:
-
-https://www.figma.com/community/file/1158928016905524023
-
-<a>
-  <img src="https://github.com/IagoAntunes/weather/blob/master/assets/22-10-17-14-10-12_01.gif" min-width="400px" max-width="400px" width="300px" alt="ImagemComputador">
-</a>
+https://www.figma.com/file/bH6dJg41oS4xVk2u1PVyNN/Food-delivery-app-Ui-kit-(Community)?node-id=513%3A4
 
 ## 🛠 Tecnologias
 
