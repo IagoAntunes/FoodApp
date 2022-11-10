@@ -19,7 +19,7 @@ App Food
 
 ## 💻 Sobre o projeto
 
-:sun_behind_large_cloud: weather  - Aplicativo de previsão do tempo com design intuitivo desenvolvido com Flutter.
+:sandwich: Foodie  - Aplicativo de Comida
 
 ---
 
