@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/Database/database.dart';
+import 'package:food/Models/app_model.dart';
 import 'package:food/Models/user_model.dart';
 import 'package:food/Pages/Nav/navPage.dart';
 import 'package:food/Providers/user_provider.dart';
@@ -46,6 +47,7 @@ class ButtonLogin extends StatelessWidget {
                   name: userLogin!.name,
                   email: userLogin!.email,
                   password: userLogin!.password,
+                  appFood: AppFood(listFavorites: []),
                 ),
               );
               Navigator.pushReplacement(
@@ -60,6 +62,7 @@ class ButtonLogin extends StatelessWidget {
               name: controllerName!.text.toString(),
               email: controllerEmail.text.toString(),
               password: controllerPassword.text.toString(),
+              appFood: AppFood(listFavorites: []),
             );
             listUsers.add(user);
             Provider.of<UserProvider>(context, listen: false).setUser(user);

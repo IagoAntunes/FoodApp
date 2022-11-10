@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/Pages/Nav/HomePage/Widgets/title_widget.dart';
+import 'package:food/Pages/Nav/HomePage/list_all_food_page.dart';
 import 'package:food/const.dart';
 import 'Widgets/app_bar.dart';
 import 'Widgets/list_category.dart';
@@ -33,9 +34,19 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              'See more',
-              textAlign: TextAlign.right,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AllFoodPage(),
+                  ),
+                );
+              },
+              child: const Text(
+                'See more',
+                textAlign: TextAlign.right,
+              ),
             ),
             const ListFoods()
           ],

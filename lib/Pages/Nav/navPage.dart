@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:food/Pages/Nav/FavoritesPage/favorites_page.dart';
 import 'package:food/Pages/Nav/HistoryPage/history_page.dart';
 import 'package:food/Pages/Nav/ProfilePage/profile_page.dart';
 
@@ -19,7 +20,7 @@ class _NavPageState extends State<NavPage> {
   int _indiceAtual = 0;
   final List<Widget> telas = [
     const HomePage(),
-    const LoginPage(),
+    const FavoritesPage(),
     ProfilePage(),
     const HistoryPage(),
   ];

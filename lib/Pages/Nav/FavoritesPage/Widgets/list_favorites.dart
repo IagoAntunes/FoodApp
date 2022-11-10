@@ -1,31 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:food/Pages/Nav/HomePage/food_detail_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../Database/database.dart';
+import '../../../../Models/user_model.dart';
 
-class ListFoods extends StatelessWidget {
-  const ListFoods({
+class ListFavorites extends StatelessWidget {
+  const ListFavorites({
     super.key,
+    required this.size,
+    required this.user,
   });
+
+  final Size size;
+  final User? user;
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: listFood.length,
-        separatorBuilder: (context, index) => const SizedBox(width: 1),
+    return SizedBox(
+      height: size.height * 0.6,
+      child: GridView.builder(
+        itemCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: user!.appFood.listFavorites.length,
+        ),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FoodDetailPage(food: listFood[index]),
-                ),
-              );
-            },
+            onTap: () {},
             child: Stack(
               children: [
                 Positioned(
@@ -47,26 +46,28 @@ class ListFoods extends StatelessWidget {
                           SizedBox(
                             width: 120,
                             child: Text(
-                              listFood[index].name,
+                              user!.appFood.listFavorites[index].name,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.allerta(
-                                  textStyle: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              )),
+                                textStyle: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                           const SizedBox(
                             height: 30,
                           ),
                           Text(
-                            'R\$ ${listFood[index].price}',
+                            'R\$ ${user!.appFood.listFavorites[index].price}',
                             style: GoogleFonts.allerta(
-                                textStyle: const TextStyle(
-                              fontSize: 17,
-                              color: Color(0xffFA4A0C),
-                              fontWeight: FontWeight.bold,
-                            )),
+                              textStyle: const TextStyle(
+                                fontSize: 17,
+                                color: Color(0xffFA4A0C),
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           )
                         ],
                       ),
@@ -75,7 +76,7 @@ class ListFoods extends StatelessWidget {
                 ),
                 Positioned(
                   child: Image.asset(
-                    listFood[index].image,
+                    user!.appFood.listFavorites[index].image,
                   ),
                 ),
               ],
