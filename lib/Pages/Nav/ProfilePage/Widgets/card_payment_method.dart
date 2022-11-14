@@ -5,7 +5,7 @@ import '../../../../Models/user_model.dart';
 import '../../../../Providers/user_provider.dart';
 
 class CardPaymentMethod extends StatefulWidget {
-  CardPaymentMethod({
+  const CardPaymentMethod({
     super.key,
   });
 

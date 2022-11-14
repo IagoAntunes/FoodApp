@@ -26,9 +26,11 @@ class SearchWidget extends StatelessWidget {
               child: TextField(
                 controller: controllerSearch,
                 decoration: const InputDecoration(
-                    hintText: 'Search',
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(left: 20)),
+                  hintText: 'Search',
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 20),
+                ),
+                onChanged: (value) {},
               ),
             ),
           ],

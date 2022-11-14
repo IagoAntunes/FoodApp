@@ -35,19 +35,21 @@ class ButtonLogin extends StatelessWidget {
         onPressed: () {
           if (isLogin) {
             User? userLogin;
-            listUsers.forEach((user) {
+            for (var user in listUsers) {
               if (user.email == controllerEmail.text.toString() &&
                   user.password == controllerPassword.text.toString()) {
                 userLogin = user;
               }
-            });
+            }
             if (userLogin != null) {
               Provider.of<UserProvider>(context, listen: false).setUser(
                 User(
-                  name: userLogin!.name,
-                  email: userLogin!.email,
-                  password: userLogin!.password,
-                  appFood: AppFood(listFavorites: []),
+                  name: userLogin.name,
+                  email: userLogin.email,
+                  password: userLogin.password,
+                  appFood: AppFood(
+                    listFavorites: [],
+                  ),
                 ),
               );
               Navigator.pushReplacement(
@@ -62,7 +64,9 @@ class ButtonLogin extends StatelessWidget {
               name: controllerName!.text.toString(),
               email: controllerEmail.text.toString(),
               password: controllerPassword.text.toString(),
-              appFood: AppFood(listFavorites: []),
+              appFood: AppFood(
+                listFavorites: [],
+              ),
             );
             listUsers.add(user);
             Provider.of<UserProvider>(context, listen: false).setUser(user);

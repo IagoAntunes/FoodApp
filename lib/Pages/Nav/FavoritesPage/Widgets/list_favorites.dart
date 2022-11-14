@@ -16,11 +16,13 @@ class ListFavorites extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: size.height * 0.6,
+      height: size.height * 0.8,
       child: GridView.builder(
-        itemCount: 2,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: user!.appFood.listFavorites.length,
+        itemCount: user!.appFood.listFavorites.length,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 30,
+          childAspectRatio: 0.85,
         ),
         itemBuilder: (context, index) {
           return GestureDetector(

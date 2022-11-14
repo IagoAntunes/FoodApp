@@ -5,11 +5,12 @@ import 'package:food/Providers/user_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../../Models/cart_model.dart';
 import '../../../const.dart';
 
 class FoodDetailPage extends StatefulWidget {
-  FoodDetailPage({super.key, required this.food});
-  FoodItem food;
+  const FoodDetailPage({super.key, required this.food});
+  final FoodItem food;
   @override
   State<FoodDetailPage> createState() => _FoodDetailPageState();
 }
@@ -96,7 +97,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ListTile(
                   title: Text(
                     'Return policy',
@@ -126,7 +127,13 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
           height: 50,
           width: 250,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Cart cart = Provider.of<Cart>(context, listen: false);
+              if (!cart.listCartFood.contains(widget.food)) {
+                widget.food.quantity = 1;
+                cart.addItem(widget.food);
+              }
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: secondaryOrange,
               shape: RoundedRectangleBorder(
@@ -134,7 +141,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
               ),
             ),
             child: const Text(
-              'Update',
+              'Add to Cart',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
               ),

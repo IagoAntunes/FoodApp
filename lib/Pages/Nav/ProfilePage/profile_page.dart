@@ -23,9 +23,9 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             CardInformation(),
-            const SizedBox(height: 50),
+            SizedBox(height: 50),
             CardPaymentMethod(),
           ],
         ),

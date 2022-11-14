@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/Models/cart_model.dart';
 import 'package:food/Pages/Initial/initial_page.dart';
 import 'package:food/Providers/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (context) => UserProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => Cart(),
         )
       ],
       child: const MyApp(),

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:food/const.dart';
 
 class HistoryPage extends StatelessWidget {
@@ -19,36 +17,34 @@ class HistoryPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
       ),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Icon(
-                Icons.calendar_month_outlined,
-                color: Colors.grey.shade300,
-                size: 150,
-              ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Icon(
+              Icons.calendar_month_outlined,
+              color: Colors.grey.shade300,
+              size: 150,
             ),
-            const Text(
-              'No history Yet',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 22,
-              ),
+          ),
+          const Text(
+            'No history Yet',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
+              fontSize: 22,
             ),
-            Container(
-              width: 200,
-              child: const Text(
-                'Hit the orange button down below to Create an order',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey),
-              ),
+          ),
+          const SizedBox(
+            width: 200,
+            child: Text(
+              'Hit the orange button down below to Create an order',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: SizedBox(

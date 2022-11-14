@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:food/Providers/user_provider.dart';
 import 'package:food/const.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../../Models/user_model.dart';
@@ -34,7 +31,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
       backgroundColor: backgroundDefaultColor,
       appBar: const AppbarFavorites(),
       body: user!.appFood.listFavorites.isNotEmpty
-          ? ListFavorites(size: size, user: user)
+          ? SingleChildScrollView(child: ListFavorites(size: size, user: user))
           : const MessageFavorites(),
     );
   }

@@ -19,7 +19,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     TextEditingController controllerSearch = TextEditingController();
-    PageController _navPage = PageController(initialPage: 0);
     return Scaffold(
       appBar: const AppbarHomePage(),
       backgroundColor: backgroundDefaultColor,
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AllFoodPage(),
+                    builder: (context) => const AllFoodPage(),
                   ),
                 );
               },

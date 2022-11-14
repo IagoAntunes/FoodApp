@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:food/Pages/Nav/FavoritesPage/favorites_page.dart';
 import 'package:food/Pages/Nav/HistoryPage/history_page.dart';
 import 'package:food/Pages/Nav/ProfilePage/profile_page.dart';
 
 import '../../const.dart';
 import 'HomePage/home_page.dart';
-import '../Tab/login_page.dart';
 
 class NavPage extends StatefulWidget {
   const NavPage({super.key});
@@ -21,7 +18,7 @@ class _NavPageState extends State<NavPage> {
   final List<Widget> telas = [
     const HomePage(),
     const FavoritesPage(),
-    ProfilePage(),
+    const ProfilePage(),
     const HistoryPage(),
   ];
 

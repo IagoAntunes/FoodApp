@@ -24,9 +24,9 @@ class _ListCategoryState extends State<ListCategory> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              listCategories.forEach((element) {
+              for (var element in listCategories) {
                 element.isSelected = false;
-              });
+              }
               setState(() {
                 listCategories[index].isSelected = true;
               });

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:food/Database/database.dart';
 import 'package:food/const.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import '../../../Models/user_model.dart';
 import '../../../Providers/user_provider.dart';
+import 'food_detail_page.dart';
 
 class AllFoodPage extends StatefulWidget {
   const AllFoodPage({super.key});
@@ -40,22 +39,30 @@ class _AllFoodPageState extends State<AllFoodPage> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: size.height * 0.6,
-            width: size.width,
-            child: GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-              ),
-              itemCount: 2,
-              itemBuilder: (context, index) {
-                return Stack(
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: size.height * 0.8,
+          width: size.width,
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.85,
+            ),
+            itemCount: listFood.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          FoodDetailPage(food: listFood[index]),
+                    ),
+                  );
+                },
+                child: Stack(
                   children: [
                     Positioned(
                       top: 30,
@@ -110,12 +117,11 @@ class _AllFoodPageState extends State<AllFoodPage> {
                       ),
                     ),
                   ],
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
-          Text('Fala comigo')
-        ],
+        ),
       ),
     );
   }

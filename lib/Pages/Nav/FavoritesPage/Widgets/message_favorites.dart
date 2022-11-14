@@ -10,15 +10,15 @@ class MessageFavorites extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(
+        children: const [
+          Icon(
             Icons.heart_broken,
             color: Colors.grey,
             size: 90,
           ),
-          Container(
+          SizedBox(
             width: 160,
-            child: const Text(
+            child: Text(
               'Você não adicionou nada a lista de favoritos.',
               textAlign: TextAlign.center,
             ),

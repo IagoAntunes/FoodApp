@@ -6,7 +6,7 @@ class User {
   String email;
   String password;
   int paymentMethod;
-
+  int optionDelivery;
   AppFood appFood;
 
   User({
@@ -15,6 +15,7 @@ class User {
     required this.name,
     required this.appFood,
     this.paymentMethod = 0,
+    this.optionDelivery = 0,
     this.description = ' Aguy in the world',
   });
 }

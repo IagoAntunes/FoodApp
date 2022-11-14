@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../../Models/user_model.dart';
 
 class CardInformation extends StatefulWidget {
-  CardInformation({
+  const CardInformation({
     super.key,
   });
 

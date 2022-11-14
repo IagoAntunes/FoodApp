@@ -38,11 +38,11 @@ class ListFoods extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: const EdgeInsets.all(10.0),
                       child: Column(
                         children: [
                           const SizedBox(
-                            height: 100,
+                            height: 90,
                           ),
                           SizedBox(
                             width: 120,
